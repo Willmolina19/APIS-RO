@@ -7,7 +7,7 @@ export const CompendioPage = () => {
   const [search, setSearch] = useState('');
   const navigate = useNavigate();
   
-  // Consumo de la API oficial de D&D 5e (Sección de Hechizos / Spells)
+
   const { data, loading, error } = useFetch('https://www.dnd5eapi.co/api/spells');
 
   const handleSearch = useCallback((e) => {
@@ -23,8 +23,8 @@ export const CompendioPage = () => {
 
   return (
     <div className="app-container">
-      <h2>📜 Compendio de Hechizos</h2>
-      <p className="subtitle">Consulta los misterios arcanos de la API oficial de D&D 5e.</p>
+      <h2>📜 Glosario de Hechizos</h2>
+      <p className="subtitle">Consulta los Hechizos arcanos de la API oficial de D&D 5e.</p>
 
       <div className="controls-layout">
         <div className="form-group" style={{ flex: 1 }}>

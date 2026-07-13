@@ -3,7 +3,7 @@ import { useFetch } from '../hooks/useFetch';
 import { LoadingSpinner } from '../components/LoadingSpinner';
 
 export const DetailPage = () => {
-  const { id } = useParams(); // Obtiene el parámetro de la URL
+  const { id } = useParams(); 
   const navigate = useNavigate();
   const { data: spell, loading, error } = useFetch(`https://www.dnd5eapi.co/api/spells/${id}`);
 

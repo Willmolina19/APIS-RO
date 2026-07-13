@@ -6,11 +6,11 @@ export const PartyPage = () => {
   const [party, setParty] = useLocalStorage('dnd-party', []);
 
   const handleAddCharacter = (newChar) => {
-    setParty((prev) => [...prev, newChar]); // Operación sobre array: Agregar
+    setParty((prev) => [...prev, newChar]); 
   };
 
   const handleDeleteCharacter = (id) => {
-    setParty((prev) => prev.filter(char => char.id !== id)); // Operación sobre array: Eliminar
+    setParty((prev) => prev.filter(char => char.id !== id)); 
   };
 
   return (

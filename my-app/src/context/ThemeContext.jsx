@@ -2,24 +2,25 @@ import { createContext, useState, useEffect } from 'react';
 
 export const ThemeContext = createContext();
 
-export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('app-theme') || 'dark';
-  });
+export function ThemeProvider({ children }) {
+ 
+  const [theme, setTheme] = useState('app-theme-dark'); 
+
 
   useEffect(() => {
-    localStorage.setItem('app-theme', theme);
+    document.documentElement.className = theme;
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+    setTheme((prev) => (prev === 'app-theme-dark' ? 'app-theme-light' : 'app-theme-dark'));
   };
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <div className={`app-theme-${theme}`} style={{ minHeight: '100vh' }}>
+      {/* Tu contenedor original se queda exactamente igual */}
+      <div className={`app-container ${theme}`}>
         {children}
       </div>
     </ThemeContext.Provider>
   );
-};
+}

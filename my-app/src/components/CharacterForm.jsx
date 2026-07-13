@@ -24,7 +24,7 @@ export const CharacterForm = ({ onAddCharacter }) => {
   return (
     <form onSubmit={handleSubmit} className="controls-layout">
       <div className="form-group">
-        <label>Nombre del Héroe</label>
+        <label>Nombre del personaje</label>
         <input type="text" placeholder="Ej: Aragorn, Jester..." value={name} onChange={(e) => setName(e.target.value)} required />
       </div>
       <div className="form-group">
